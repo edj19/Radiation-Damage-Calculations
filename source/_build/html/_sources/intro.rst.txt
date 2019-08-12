@@ -1,0 +1,6 @@
+Introduction
+=============
+Radiation Damage Simulation and Calculations with multi-scale tools
+in the Calculations and Molecular Dynamics.
+
+.. image:: ../images/lammps.jpg

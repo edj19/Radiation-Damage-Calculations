@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Neutron Damage &mdash; RadiationDamageCalculations 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Molecular Dynamics" href="MolecularDynamics.html" />
+    <link rel="prev" title="MCCM algorithm" href="MCCMalgorithm.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RadiationDamageCalculations
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">Basic Radiation Damage model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCCMalgorithm.html">MCCM algorithm</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Neutron Damage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-models-and-methods">Basic Models and Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spectra-and-specomp-distribution">SPECTRA and SPECOMP_Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#talys1-9">Talys1.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#njoy-nuclear-data-processing">NJOY Nuclear Data Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moder">MODER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reconr">RECONR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#broadr">BROADR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heatr">HEATR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#groupr">GROUPR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acer">ACER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plotr-and-viewr">PLOTR and VIEWR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MolecularDynamics.html">Molecular Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help Turitorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RadiationDamageCalculations</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Neutron Damage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/NeutronDamage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="neutron-damage">
+<h1>Neutron Damage<a class="headerlink" href="#neutron-damage" title="Permalink to this headline">¶</a></h1>
+<p>My another research work is the neutron radiation damage in materials and mainly focus on the displacement cross section and displacement per atom(dpa)
+calculations.Quantification of displacement damage is an essential parameter to assess the strength and lifetime of
+functional materials in the ITER and upcoming fusion devices such as European Demo fusion reactor.Fusion neutrons produce
+different species of primary knocked on atoms(PKA) based on the different reaction channels such as (n,n’),(n,2n),(n, <span class="math notranslate nohighlight">\(\alpha\)</span> ),
+(n,p) and (n, <span class="math notranslate nohighlight">\(\gamma\)</span> )etc.Damage cascading of PKA and other knocked on atoms produce vacancies and interstitials,both
+collectively known as Frenkel pair.Displacement of atoms has adverse effects on the liftime of reactor materials and quantized
+with displacement per atom(dpa).Prediction of dpa values is required to accurately predict the liftime of functional materialsto be placed in fusion reactor.
+And my research route shows the following picture:</p>
+<img alt="_images/method.jpg" src="_images/method.jpg" />
+<p>In order to calculate the dpa,you should calculate the two
+physical quantity neutron fluxes and displacement cross section where their formulas is:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_{dpa}(E_n)_i=\int^{T_{max}}_{E_d}(\frac{d\sigma}{dE})_i\nu (T)_idT\]</div>
+<div class="math notranslate nohighlight">
+\[dpa/sec = \int^{E_n}_0\sigma_{dpa}(E_n)\Phi_ndE_n\]</div>
+<p>where <span class="math notranslate nohighlight">\((\frac{d\sigma}{dE})_i\)</span> is the energy spectra of PKA or recoil atom from <span class="math notranslate nohighlight">\(i^{th}\)</span> reaction channel,
+<span class="math notranslate nohighlight">\(\nu(T)_i\)</span> is the number of produced Frenkel pair from the dynamics of PKA atom of T energy, <span class="math notranslate nohighlight">\(E_n\)</span> is the energy of
+incident neutron, <span class="math notranslate nohighlight">\(E_d\)</span> is the displacement threshold energy of target lattice, <span class="math notranslate nohighlight">\(T_{max}\)</span> is the maximum energy available
+for displacement damage and <span class="math notranslate nohighlight">\(\Phi_n\)</span> is the neutron flux on the material.</p>
+<div class="section" id="basic-models-and-methods">
+<h2>Basic Models and Methods<a class="headerlink" href="#basic-models-and-methods" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="spectra-and-specomp-distribution">
+<h2>SPECTRA and SPECOMP_Distribution<a class="headerlink" href="#spectra-and-specomp-distribution" title="Permalink to this headline">¶</a></h2>
+<p><strong>SPECTER</strong> is a neutron damage calculations for materials irradiations programm.</p>
+</div>
+<div class="section" id="talys1-9">
+<h2>Talys1.9<a class="headerlink" href="#talys1-9" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="njoy-nuclear-data-processing">
+<h2>NJOY Nuclear Data Processing<a class="headerlink" href="#njoy-nuclear-data-processing" title="Permalink to this headline">¶</a></h2>
+<p>The NJOY nuclear data processing system is a comprehensive computer code package for producing pointwise and multigroup nuclear
+cross sections and related quantities from evaluated nuclear data in the <strong>ENDF</strong> format.The U.S. Evaluated Nuclear Data Files(ENDF)
+have progressed through a number of versions,notably ENDF/B-III,ENDF/B-IV,ENDF/B-V,ENDF/B-VI,ENDF/B-VII.The ENDF format has also evolved
+through many versions.Variations of the format called “ENDF-6” were used for ENDF/B-VI and ENDF/B-VII,and will be used in ENDF/B-VIII.The
+ENDF format is also used in other nuclear data libraries such as the JEFF libraries in Europe and the JENDL libraries in Iapan,or in
+specialized libraries distributed through the Nuclear Data Section of International Atomic Energy Agency(IAEA0.These libraries represent
+the underlying nuclear data from a physics viewpoint,but practical calculations usually require special libraries for particle transport
+codes or reactor core physics codes.This is the mission of NJOY-to take the basic data from the nuclear data library and convert it into
+the forms needed for applications.The NJOY code consists of a set of main modules,each performing a well-defined processing task.Each of
+these main modules is essentially a separate computer program.They are linked to one another by input and output files.And in this simple
+tutorial,I will introduce some main modules which is important to radiation damage calculations.Okay,let’s start our tour.</p>
+<p>Before our learns,you should read the examples test 1 seriously and I will regard it as a main case to our learning. And what I write
+here is to let you are familar with NJOY as soon as possible,in contrast to this,the theory or complete tutorials need you to read.However
+I believe that what this tutorial will make you love it and do your research better.</p>
+<img alt="_images/njoy1.jpg" src="_images/njoy1.jpg" />
+<div class="section" id="moder">
+<h3>MODER<a class="headerlink" href="#moder" title="Permalink to this headline">¶</a></h3>
+<p><strong>MODER</strong> converts ENDF “tapes” back and forth between formatted(that is,ASCII) and blocked binary modes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications(free) format)--------------------</span>
+<span class="o">**</span><span class="n">card</span> <span class="mi">1</span><span class="o">**</span>       <span class="n">unit</span> <span class="n">numbers</span>
+          <span class="n">nin</span>    <span class="nb">input</span> <span class="n">unit</span>
+          <span class="n">nout</span>   <span class="n">output</span> <span class="n">unit</span>
+
+<span class="n">a</span> <span class="n">positive</span> <span class="n">unit</span> <span class="ow">is</span> <span class="n">coded</span> <span class="p">(</span><span class="n">mode</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">a</span> <span class="n">negative</span> <span class="n">unit</span> <span class="ow">is</span> <span class="n">blocked</span> <span class="n">binary</span><span class="p">(</span><span class="n">njoy</span> <span class="n">mode</span><span class="p">)</span>
+<span class="c1">#note:abs(min) ge 1 and le 19 is a flag to select various materials fro one or more</span>
+<span class="c1">#input tapes,with or without mode conversion,the kind of data to be processed is</span>
+<span class="c1">#keyed to min as follows:</span>
+     <span class="n">nin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="k">for</span> <span class="n">endf</span> <span class="ow">or</span> <span class="n">pendf</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span>
+           <span class="mi">2</span><span class="p">,</span><span class="k">for</span> <span class="n">gendf</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span>
+           <span class="mi">3</span><span class="p">,</span> <span class="k">for</span> <span class="n">errorr</span><span class="o">-</span><span class="nb">format</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span>
+    <span class="n">cards</span> <span class="mi">2</span> <span class="ow">and</span> <span class="mi">3</span> <span class="k">for</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span> <span class="n">ge</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">le</span> <span class="mi">19</span> <span class="n">only</span>
+
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">2</span>
+          <span class="n">tpid</span>  <span class="n">tapeid</span> <span class="k">for</span> <span class="n">nout</span><span class="p">,</span><span class="mi">66</span> <span class="n">characters</span> <span class="n">allowed</span>
+                 <span class="p">(</span><span class="n">delimited</span> <span class="k">with</span> <span class="s1">&#39;,ended with /)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">3</span>
+          <span class="n">nin</span>   <span class="nb">input</span> <span class="n">unit</span>
+                <span class="n">terminate</span> <span class="n">moder</span> <span class="n">by</span> <span class="n">setting</span> <span class="n">nin</span><span class="o">=</span><span class="mi">0</span>
+          <span class="n">matd</span>  <span class="n">material</span> <span class="n">on</span> <span class="n">this</span> <span class="n">tape</span> <span class="n">to</span> <span class="n">add</span> <span class="n">to</span> <span class="n">nout</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reconr">
+<h3>RECONR<a class="headerlink" href="#reconr" title="Permalink to this headline">¶</a></h3>
+<p><strong>RECONR</strong> reconstructs pointwise(energy-dependent) cross sections from ENDF resonance parameters and interpolation schemes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications (free format)-------------</span>
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
+        <span class="n">nendf</span>    <span class="n">unit</span> <span class="k">for</span> <span class="n">endf</span> <span class="n">tape</span>
+        <span class="n">npend</span>    <span class="n">unit</span> <span class="k">for</span> <span class="n">pendf</span> <span class="n">tape</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">2</span>
+        <span class="n">tlabel</span>    <span class="mi">66</span> <span class="n">character</span> <span class="n">label</span> <span class="k">for</span> <span class="n">new</span> <span class="n">pendf</span> <span class="n">tape</span>
+                  <span class="n">delimited</span> <span class="k">with</span> <span class="n">quotes</span><span class="p">,</span><span class="n">ended</span> <span class="k">with</span> <span class="o">/.</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">3</span>
+        <span class="n">mat</span>      <span class="n">material</span> <span class="n">to</span> <span class="n">be</span> <span class="n">reconstructed</span>
+        <span class="n">ncards</span>   <span class="n">number</span> <span class="n">of</span> <span class="n">cards</span> <span class="n">of</span> <span class="n">descriptive</span> <span class="n">data</span> <span class="k">for</span> <span class="n">new</span> <span class="n">mf1</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ngrid</span>    <span class="n">number</span> <span class="n">of</span> <span class="n">user</span> <span class="n">energy</span> <span class="n">grid</span> <span class="n">points</span> <span class="n">to</span> <span class="n">be</span> <span class="n">added</span><span class="o">.</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">4</span>
+        <span class="n">err</span>      <span class="n">fractional</span> <span class="n">reconstruction</span> <span class="n">tolerance</span> <span class="n">used</span> <span class="n">when</span> <span class="n">resonance</span><span class="o">-</span><span class="n">integral</span>
+                 <span class="n">error</span> <span class="n">criterion</span><span class="p">(</span><span class="n">see</span> <span class="n">errint</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">satisfied</span><span class="o">.</span>
+        <span class="n">tempr</span>    <span class="n">reconstruction</span> <span class="n">temperature</span><span class="p">(</span><span class="n">deg</span> <span class="n">kelvin</span><span class="p">)(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">errmax</span>   <span class="n">fractional</span> <span class="n">reconstruction</span> <span class="n">tolerance</span> <span class="n">used</span> <span class="n">when</span> <span class="n">resonance</span><span class="o">-</span><span class="n">integral</span>
+                 <span class="n">error</span> <span class="n">criterion</span> <span class="ow">is</span> <span class="n">satisfied</span><span class="p">(</span><span class="n">errmax</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">err</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">err</span><span class="p">)</span>
+        <span class="n">errint</span>   <span class="n">maximum</span> <span class="n">resonance</span><span class="o">-</span><span class="n">integral</span> <span class="n">error</span><span class="p">(</span><span class="ow">in</span> <span class="n">barns</span><span class="p">)</span> <span class="n">per</span> <span class="n">grid</span> <span class="n">point</span> <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">err</span><span class="o">/</span><span class="mi">20000</span><span class="p">)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">5</span>
+        <span class="n">cards</span>    <span class="n">ncards</span> <span class="n">of</span> <span class="n">descriptive</span> <span class="n">comments</span> <span class="k">for</span> <span class="n">mt451</span> <span class="n">each</span> <span class="n">card</span>
+                 <span class="n">delimited</span> <span class="k">with</span> <span class="n">quotes</span><span class="p">,</span><span class="n">ended</span> <span class="k">with</span> <span class="o">/.</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">6</span>
+        <span class="n">enode</span>    <span class="n">users</span> <span class="n">energy</span> <span class="n">grid</span> <span class="n">points</span>
+
+        <span class="n">cards</span> <span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">input</span> <span class="k">for</span> <span class="n">each</span> <span class="n">material</span> <span class="n">desired</span>
+        <span class="n">mat</span><span class="o">=</span><span class="mi">0</span><span class="o">/</span> <span class="n">terminates</span> <span class="n">execution</span> <span class="n">of</span> <span class="n">reconr</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="broadr">
+<h3>BROADR<a class="headerlink" href="#broadr" title="Permalink to this headline">¶</a></h3>
+<p><strong>BROADR</strong> Doppler-broadens and thins pointwise cross sections.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specification(free format)--------</span>
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
+    <span class="n">nendf</span>    <span class="nb">input</span> <span class="n">endf</span> <span class="n">tape</span><span class="p">(</span><span class="k">for</span> <span class="n">thermal</span> <span class="n">nubar</span> <span class="n">only</span><span class="p">)</span>
+    <span class="n">nin</span>      <span class="nb">input</span> <span class="n">pendf</span> <span class="n">tape</span>
+    <span class="n">nout</span>     <span class="n">output</span> <span class="n">pendf</span> <span class="n">tape</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">2</span>
+    <span class="n">mat1</span>     <span class="n">material</span> <span class="n">to</span> <span class="n">broadened</span> <span class="ow">and</span> <span class="n">thinned</span>
+    <span class="n">ntemp2</span>   <span class="n">number</span> <span class="n">of</span> <span class="n">final</span> <span class="n">temperature</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">istart</span>   <span class="n">restart</span><span class="p">(</span><span class="mi">0</span> <span class="n">no</span><span class="p">,</span><span class="mi">1</span> <span class="n">yes</span><span class="p">,</span><span class="n">default</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">istrap</span>   <span class="n">bootstrap</span><span class="p">(</span><span class="mi">0</span> <span class="n">no</span><span class="p">,</span><span class="mi">1</span> <span class="n">yes</span><span class="p">,</span><span class="n">default</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">temp1</span>    <span class="n">starting</span> <span class="n">temperature</span> <span class="kn">from</span> <span class="nn">nin</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">OK</span><span class="p">)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">3</span>
+    <span class="n">errthn</span>   <span class="n">fractional</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">thinning</span>
+    <span class="n">thnmax</span>   <span class="nb">max</span><span class="o">.</span> <span class="n">energy</span> <span class="k">for</span> <span class="n">broadening</span> <span class="ow">and</span> <span class="n">thinning</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span> <span class="n">MeV</span><span class="p">)</span>
+    <span class="n">errmax</span>   <span class="n">fractional</span> <span class="n">tolerance</span> <span class="n">used</span> <span class="n">when</span> <span class="n">integral</span> <span class="n">criterion</span> <span class="ow">is</span> <span class="n">satisfied</span>
+             <span class="p">(</span><span class="n">same</span> <span class="n">usage</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">reconr</span><span class="p">)</span>
+             <span class="p">(</span><span class="n">errmax</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">errthn</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">errthn</span><span class="p">)</span>
+    <span class="n">errint</span>   <span class="n">parameter</span> <span class="n">to</span> <span class="n">control</span> <span class="n">integral</span> <span class="n">thinning</span><span class="p">(</span><span class="n">usage</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">reconr</span><span class="p">)</span>
+             <span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">errthn</span><span class="o">/</span><span class="mi">20000</span><span class="p">)</span> <span class="nb">set</span> <span class="n">very</span> <span class="n">small</span> <span class="n">to</span> <span class="n">turn</span> <span class="n">off</span> <span class="n">integral</span> <span class="n">thinning</span>
+     <span class="c1">#(A good choice for the convergence parameters errthn,errmax,and errint is</span>
+     <span class="c1"># the same set of values used in reconr)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">4</span>
+    <span class="n">temp2</span>    <span class="n">final</span> <span class="n">temperatures</span> <span class="p">(</span><span class="n">deg</span> <span class="n">Kelvin</span><span class="p">)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">5</span>
+    <span class="n">mat1</span>     <span class="nb">next</span> <span class="n">MAT</span> <span class="n">number</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span> <span class="k">with</span> <span class="n">these</span> <span class="n">parameters</span><span class="o">.</span><span class="n">Terminate</span> <span class="k">with</span> <span class="n">mat1</span><span class="o">=</span><span class="mf">0.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="heatr">
+<h3>HEATR<a class="headerlink" href="#heatr" title="Permalink to this headline">¶</a></h3>
+<p><strong>HEATER</strong> generative pointwise heat production cross section (neutron KERMA factors) and radiation damage production cross sections.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications(free format)------------------</span>
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
+    <span class="n">nendf</span>    <span class="n">unit</span> <span class="k">for</span> <span class="n">endf</span> <span class="n">tape</span>
+    <span class="n">nin</span>      <span class="n">unit</span> <span class="k">for</span> <span class="nb">input</span> <span class="n">pendf</span> <span class="n">tape</span>
+    <span class="n">nout</span>     <span class="n">unit</span> <span class="k">for</span> <span class="n">output</span> <span class="n">pendf</span> <span class="n">tape</span>
+    <span class="n">nplot</span>    <span class="n">unit</span> <span class="k">for</span> <span class="n">graphical</span> <span class="n">check</span> <span class="n">output</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">2</span>
+    <span class="n">matd</span>     <span class="n">material</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span>
+    <span class="n">npk</span>      <span class="n">number</span> <span class="n">of</span> <span class="n">partial</span> <span class="n">kermax</span> <span class="n">desired</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">nqa</span>      <span class="n">number</span> <span class="n">of</span> <span class="n">user</span> <span class="n">q</span> <span class="n">values</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ntemp</span>    <span class="n">number</span> <span class="n">of</span> <span class="n">temperatures</span> <span class="n">to</span> <span class="n">process</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">meaning</span> <span class="nb">all</span> <span class="n">on</span> <span class="n">pendf</span><span class="p">)</span>
+    <span class="n">local</span>    <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">=</span><span class="n">gamma</span> <span class="n">rays</span> <span class="n">transported</span><span class="o">/</span><span class="n">deposited</span> <span class="n">locally</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">iprint</span>   <span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="nb">min</span><span class="p">,</span> <span class="mi">1</span> <span class="nb">max</span><span class="p">,</span> <span class="mi">2</span> <span class="n">deck</span><span class="p">)(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ed</span>       <span class="n">displacement</span> <span class="n">energy</span> <span class="k">for</span> <span class="n">damage</span><span class="p">(</span><span class="n">default</span> <span class="kn">from</span> <span class="nn">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">table</span><span class="p">)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">3</span>   <span class="k">for</span> <span class="n">npk</span> <span class="n">gt</span> <span class="mi">0</span> <span class="n">only</span>
+    <span class="n">mtk</span>      <span class="n">mt</span> <span class="n">numbers</span> <span class="k">for</span> <span class="n">partial</span> <span class="n">kermas</span> <span class="n">desired</span> <span class="n">total</span> <span class="p">(</span><span class="n">mt301</span><span class="p">)</span> <span class="n">will</span> <span class="n">be</span> <span class="n">provided</span>
+             <span class="n">automatically</span><span class="o">.</span><span class="n">partical</span> <span class="n">kerma</span> <span class="k">for</span> <span class="n">reaction</span> <span class="n">mt</span> <span class="ow">is</span> <span class="n">mt</span><span class="o">+</span><span class="mi">300</span> <span class="ow">and</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span>
+             <span class="n">properly</span> <span class="n">defined</span> <span class="n">unless</span> <span class="n">a</span> <span class="n">gamma</span> <span class="n">file</span> <span class="k">for</span> <span class="n">mt</span> <span class="ow">is</span> <span class="n">on</span> <span class="n">endf</span> <span class="n">tape</span><span class="o">.</span>
+             <span class="n">special</span> <span class="n">values</span> <span class="n">allowed</span><span class="o">--</span>
+               <span class="mi">303</span>   <span class="n">non</span><span class="o">-</span><span class="n">elastic</span> <span class="p">(</span><span class="nb">all</span> <span class="n">but</span> <span class="n">mt2</span><span class="p">)</span>
+               <span class="mi">304</span>   <span class="n">inelastic</span> <span class="p">(</span><span class="n">mt51</span> <span class="n">thru</span> <span class="mi">91</span><span class="p">)</span>
+               <span class="mi">318</span>   <span class="n">fission</span><span class="p">(</span><span class="n">mt18</span> <span class="ow">or</span> <span class="n">mt19</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+               <span class="mi">401</span>   <span class="n">disappearance</span><span class="p">(</span><span class="n">mt102</span> <span class="n">thru</span> <span class="mi">120</span><span class="p">)</span>
+               <span class="mi">442</span>   <span class="n">total</span> <span class="n">ev</span><span class="o">-</span><span class="n">barns</span>
+               <span class="mi">443</span>   <span class="n">total</span> <span class="n">kinematic</span> <span class="n">kerma</span><span class="p">(</span><span class="n">high</span> <span class="n">limit</span><span class="p">)</span>
+            <span class="n">damage</span> <span class="n">energy</span> <span class="n">production</span> <span class="n">values</span><span class="o">--</span>
+               <span class="mi">444</span>   <span class="n">total</span>
+               <span class="mi">445</span>   <span class="n">elastic</span><span class="p">(</span><span class="n">mt2</span><span class="p">)</span>
+               <span class="mi">446</span>   <span class="n">inelastic</span> <span class="p">(</span><span class="n">mt51</span> <span class="n">thru</span> <span class="mi">91</span><span class="p">)</span>
+               <span class="mi">447</span>   <span class="n">disappearance</span> <span class="p">(</span><span class="n">mt102</span> <span class="n">thru</span> <span class="mi">120</span><span class="p">)</span>
+            <span class="n">cards</span> <span class="ow">and</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">nqa</span> <span class="n">gt</span> <span class="mi">0</span> <span class="n">only</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">4</span>
+    <span class="n">mta</span>     <span class="n">mt</span> <span class="n">number</span> <span class="k">for</span> <span class="n">users</span> <span class="n">q</span> <span class="n">values</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">5</span>
+    <span class="n">qa</span>      <span class="n">user</span> <span class="n">specified</span> <span class="n">q</span> <span class="n">values</span> <span class="p">(</span><span class="n">ev</span><span class="p">)</span>
+            <span class="p">(</span><span class="k">if</span> <span class="n">qa</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="mf">99.e6</span><span class="p">,</span><span class="n">read</span> <span class="ow">in</span> <span class="n">variable</span> <span class="n">qbar</span> <span class="k">for</span> <span class="n">this</span> <span class="n">reaction</span><span class="p">)</span>
+
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">5</span><span class="n">a</span>  <span class="n">variable</span> <span class="n">qbar</span> <span class="p">(</span><span class="k">for</span> <span class="n">reactions</span> <span class="k">with</span> <span class="n">qa</span> <span class="n">flag</span> <span class="n">only</span><span class="p">)</span>
+    <span class="n">qbar</span>    <span class="n">tab1</span> <span class="n">record</span> <span class="n">giving</span> <span class="n">qbar</span> <span class="n">versus</span> <span class="n">e</span> <span class="p">(</span><span class="mi">1000</span> <span class="n">words</span> <span class="nb">max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="groupr">
+<h3>GROUPR<a class="headerlink" href="#groupr" title="Permalink to this headline">¶</a></h3>
+<p><strong>GROUPR</strong> generates self-shielded multigroup cross sections,group-to-group scattering matrices,photon production matrices,and
+charged-particle multi-group cross sections from pointwise input.</p>
+</div>
+<div class="section" id="acer">
+<h3>ACER<a class="headerlink" href="#acer" title="Permalink to this headline">¶</a></h3>
+<p><strong>ACER</strong> prepares libraries in ACE format for the Los Alamos continuous-energy Monte Carlo MCNP and MCNPX codes.The ACER module is supported
+by subsidiary modules for the different classes of the ACE format.</p>
+</div>
+<div class="section" id="plotr-and-viewr">
+<h3>PLOTR and VIEWR<a class="headerlink" href="#plotr-and-viewr" title="Permalink to this headline">¶</a></h3>
+<p><strong>PLOTR</strong> makes plots of cross sections and perspective plots of distributions for both pointwise and multigroup data by generating
+input for the VIEWR module and <strong>VIEWR</strong> converts plotting files produced by the other modules into high-quality color Postscript plots.</p>
+</div>
+<div class="section" id="conclusions">
+<h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="MolecularDynamics.html" class="btn btn-neutral float-right" title="Molecular Dynamics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="MCCMalgorithm.html" class="btn btn-neutral float-left" title="MCCM algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, edj
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
