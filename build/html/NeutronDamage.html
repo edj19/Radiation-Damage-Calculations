@@ -195,6 +195,16 @@ for displacement damage and <span class="math notranslate nohighlight">\(\Phi_n\
 <div class="section" id="spectra-and-specomp-distribution">
 <h2>SPECTRA and SPECOMP_Distribution<a class="headerlink" href="#spectra-and-specomp-distribution" title="Permalink to this headline">¶</a></h2>
 <p><strong>SPECTER</strong> is a neutron damage calculations for materials irradiations programm.</p>
+<p>SPECTER input is as follows(all free format):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Title （80 characters)
+ITYP,ISIG,IGP,IPKA,ACNM,TIME(Free Format)
+  ITYP = 0 If no flux uncertainties,= 2 Otherwise
+  ISIG = 1 To print collapsed cross sections, =0 To stop,
+       = 2 For 1-group Thermal Neutron(2200 m/s)
+  IGP = 0 If group differential flux(n/cm2-MeV, = OUTPUT)
+      = 1 If true differential flux
+</pre></div>
+</div>
 </div>
 <div class="section" id="talys1-9">
 <h2>Talys1.9<a class="headerlink" href="#talys1-9" title="Permalink to this headline">¶</a></h2>
@@ -371,6 +381,13 @@ I believe that what this tutorial will make you love it and do your research bet
 <h3>GROUPR<a class="headerlink" href="#groupr" title="Permalink to this headline">¶</a></h3>
 <p><strong>GROUPR</strong> generates self-shielded multigroup cross sections,group-to-group scattering matrices,photon production matrices,and
 charged-particle multi-group cross sections from pointwise input.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications(free format)-----------</span>
+<span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
+    <span class="n">nendf</span>    <span class="n">unit</span> <span class="k">for</span> <span class="n">endf</span> <span class="n">tape</span>
+    <span class="n">npend</span>    <span class="n">unit</span> <span class="k">for</span> <span class="n">pendf</span> <span class="n">tape</span>
+    <span class="n">ngout1</span>   <span class="n">unit</span> <span class="k">for</span> <span class="nb">input</span> <span class="n">gout</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="acer">
 <h3>ACER<a class="headerlink" href="#acer" title="Permalink to this headline">¶</a></h3>

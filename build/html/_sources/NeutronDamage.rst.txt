@@ -34,6 +34,17 @@ SPECTRA and SPECOMP_Distribution
 ------------------------------------
 **SPECTER** is a neutron damage calculations for materials irradiations programm.
 
+SPECTER input is as follows(all free format):
+::
+
+    Title （80 characters)
+    ITYP,ISIG,IGP,IPKA,ACNM,TIME(Free Format)
+      ITYP = 0 If no flux uncertainties,= 2 Otherwise
+      ISIG = 1 To print collapsed cross sections, =0 To stop,
+           = 2 For 1-group Thermal Neutron(2200 m/s)
+      IGP = 0 If group differential flux(n/cm2-MeV, = OUTPUT)
+          = 1 If true differential flux
+
 Talys1.9
 ----------
 
@@ -228,6 +239,14 @@ GROUPR
 ^^^^^^^^^
 **GROUPR** generates self-shielded multigroup cross sections,group-to-group scattering matrices,photon production matrices,and 
 charged-particle multi-group cross sections from pointwise input.
+
+::
+
+    #---input specifications(free format)-----------
+    **card** 1
+        nendf    unit for endf tape
+        npend    unit for pendf tape
+        ngout1   unit for input gout
 
 
 ACER
