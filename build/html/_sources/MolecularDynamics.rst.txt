@@ -75,6 +75,53 @@ Prerequisites
 
 
    * **FFTW** 
+   Second Let's start the **FFTW** installation,you can download the source code from `the official website <http://fftw.org/>`_
+   and execute the following commands
+
+   .. code-block:: c
+
+      tar -zxvf fftw
+      cd fftw-3.3.8
+      ./configure --prefix=/home/day/material/lammps/fftw3/ --enable-shared=yes ( = you should remmember this path)
+      make -j n
+      make install
+
+   Okay It's done!
+
+Obtaining and building the Lammps 
+""""""""""""""""""""""""""""""""""""
+Next download the `lammps source code <https://lammps.sandia.gov/>`_ and execute the following commands
+
+.. code-block:: c
+
+   tar -zxvf lammps
+   cd lammps-22Aug18/src
+   cd STUBS/
+   make
+   cd ../MAKE
+   vim Makefile.mpi(modify details see below)
+   cd ..
+   make mpi
+
+When you finish the commands,you can see a executable file **lmp_mpi** in the src/ folder,you can make a directory lammps sibling
+directory and copy the **lmp_mpi** in this folder.Remmember to add the its path to **.bashrc** in order to you can call 
+lammps command in any folders.
+
+.. note::
+   If you want install the optional packages that extend LAMMPS functionality which enable a specific set of features.You can
+   use the following command to check relative packages:
+
+   .. code-block:: c
+
+      cd lammps-22Aug18/src
+      make package-status
+    
+   And use the following commands to install and uninstall the packages.
+
+   .. code-block:: c
+
+      make yes-package
+      make no-package
 
 
 

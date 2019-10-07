@@ -91,6 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#lammps-tutortials">5.2. Lammps Tutortials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-lammps">5.2.1. Install LAMMPS</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prerequisites">5.2.1.1. Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#obtaining-and-building-the-lammps">5.2.1.2. Obtaining and building the Lammps</a></li>
 </ul>
 </li>
 </ul>
@@ -228,6 +229,47 @@ the help of <strong>mpirun -np k ./examples/cpi</strong> statement.</p>
 <ul class="simple">
 <li><p><strong>FFTW</strong></p></li>
 </ul>
+<p>Second Let’s start the <strong>FFTW</strong> installation,you can download the source code from <a class="reference external" href="http://fftw.org/">the official website</a>
+and execute the following commands</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">zxvf</span> <span class="n">fftw</span>
+<span class="n">cd</span> <span class="n">fftw</span><span class="o">-</span><span class="mf">3.3.8</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">day</span><span class="o">/</span><span class="n">material</span><span class="o">/</span><span class="n">lammps</span><span class="o">/</span><span class="n">fftw3</span><span class="o">/</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">shared</span><span class="o">=</span><span class="n">yes</span> <span class="p">(</span> <span class="o">=</span> <span class="n">you</span> <span class="n">should</span> <span class="n">remmember</span> <span class="n">this</span> <span class="n">path</span><span class="p">)</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j</span> <span class="n">n</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>Okay It’s done!</p>
+</div>
+</div>
+<div class="section" id="obtaining-and-building-the-lammps">
+<h4>5.2.1.2. Obtaining and building the Lammps<a class="headerlink" href="#obtaining-and-building-the-lammps" title="Permalink to this headline">¶</a></h4>
+<p>Next download the <a class="reference external" href="https://lammps.sandia.gov/">lammps source code</a> and execute the following commands</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">zxvf</span> <span class="n">lammps</span>
+<span class="n">cd</span> <span class="n">lammps</span><span class="o">-</span><span class="mi">22</span><span class="n">Aug18</span><span class="o">/</span><span class="n">src</span>
+<span class="n">cd</span> <span class="n">STUBS</span><span class="o">/</span>
+<span class="n">make</span>
+<span class="n">cd</span> <span class="p">..</span><span class="o">/</span><span class="n">MAKE</span>
+<span class="n">vim</span> <span class="n">Makefile</span><span class="p">.</span><span class="n">mpi</span><span class="p">(</span><span class="n">modify</span> <span class="n">details</span> <span class="n">see</span> <span class="n">below</span><span class="p">)</span>
+<span class="n">cd</span> <span class="p">..</span>
+<span class="n">make</span> <span class="n">mpi</span>
+</pre></div>
+</div>
+<p>When you finish the commands,you can see a executable file <strong>lmp_mpi</strong> in the src/ folder,you can make a directory lammps sibling
+directory and copy the <strong>lmp_mpi</strong> in this folder.Remmember to add the its path to <strong>.bashrc</strong> in order to you can call
+lammps command in any folders.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want install the optional packages that extend LAMMPS functionality which enable a specific set of features.You can
+use the following command to check relative packages:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">lammps</span><span class="o">-</span><span class="mi">22</span><span class="n">Aug18</span><span class="o">/</span><span class="n">src</span>
+<span class="n">make</span> <span class="n">package</span><span class="o">-</span><span class="n">status</span>
+</pre></div>
+</div>
+<p>And use the following commands to install and uninstall the packages.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">yes</span><span class="o">-</span><span class="n">package</span>
+<span class="n">make</span> <span class="n">no</span><span class="o">-</span><span class="n">package</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
