@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Molecular Dynamics &mdash; RadiationDamageCalculations 0.1 documentation</title>
+  <title>5. Molecular Dynamics &mdash; RadiationDamageCalculations 0.1 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Help Turitorials" href="help.html" />
-    <link rel="prev" title="Neutron Damage" href="NeutronDamage.html" /> 
+    <link rel="next" title="6. Help Turitorials" href="help.html" />
+    <link rel="prev" title="4. Neutron Damage" href="NeutronDamage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,17 +82,26 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">Basic Radiation Damage model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MCCMalgorithm.html">MCCM algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NeutronDamage.html">Neutron Damage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Molecular Dynamics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-concepts-and-methods">Basic Concepts and Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dlpoly-tutorials">DLPOLY Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lammps-tutortials">Lammps Tutortials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">2. Basic Radiation Damage model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCCMalgorithm.html">3. MCCM algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NeutronDamage.html">4. Neutron Damage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Molecular Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-concepts-and-methods">5.1. Basic Concepts and Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lammps-tutortials">5.2. Lammps Tutortials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-lammps">5.2.1. Install LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">5.2.1.1. Prerequisites</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="help.html">Help Turitorials</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dl-poly-tutorials">5.3. DL_POLY Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-dl-poly">5.3.1. Install DL_POLY</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">6. Help Turitorials</a></li>
 </ul>
 
             
@@ -138,7 +147,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Molecular Dynamics</li>
+      <li>5. Molecular Dynamics</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -158,10 +167,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="molecular-dynamics">
-<h1>Molecular Dynamics<a class="headerlink" href="#molecular-dynamics" title="Permalink to this headline">¶</a></h1>
+<h1>5. Molecular Dynamics<a class="headerlink" href="#molecular-dynamics" title="Permalink to this headline">¶</a></h1>
 <p>Radiation Damage Simulations with Molecular Dynamics</p>
+<p>Before introducing the simulation,many people may think why we need simulations,what can we do through simulations</p>
 <div class="section" id="basic-concepts-and-methods">
-<h2>Basic Concepts and Methods<a class="headerlink" href="#basic-concepts-and-methods" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. Basic Concepts and Methods<a class="headerlink" href="#basic-concepts-and-methods" title="Permalink to this headline">¶</a></h2>
 <p>Molecular dynamics simulations compute the motions of individual molecules in models of solids,liquids and gases and it is a
 technique that allows a numerical “thought experiment” to be carried out using a model that,to a limited extent,approximates a real
 physical or chemical system.Such a “virtual laboratory” approach has the advantage that many such “experiments” can be easily
@@ -169,11 +179,85 @@ set up and carried out in succession by simply varying the control parameters.Mo
 downside is that the results are only as good as the numerical model.In addition,the results can be artificially biased if the
 molecular dynamics calculation is unable to sample an adequate number of microstates over the time it is allowed to run.</p>
 </div>
-<div class="section" id="dlpoly-tutorials">
-<h2>DLPOLY Tutorials<a class="headerlink" href="#dlpoly-tutorials" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="lammps-tutortials">
-<h2>Lammps Tutortials<a class="headerlink" href="#lammps-tutortials" title="Permalink to this headline">¶</a></h2>
+<h2>5.2. Lammps Tutortials<a class="headerlink" href="#lammps-tutortials" title="Permalink to this headline">¶</a></h2>
+<p>LAMMPS is a classical molecular dynamics(MD) code that models ensembles of particles in a liquid,solid,or gaseous state.It can
+model atomic,polymeric,biological,solid-state(metals,ceramics,oxides),granular,coarse-grained,or macroscopic systems using
+a variety of interatomic potentials(force fields) and boundary conditions.It can model 2d or 3d systems with only a few
+particles up to millions or billions.</p>
+<div class="section" id="install-lammps">
+<h3>5.2.1. Install LAMMPS<a class="headerlink" href="#install-lammps" title="Permalink to this headline">¶</a></h3>
+<p>In this section,I will show you the most direct method to compile and buid the parallel lammps in you Linux(Ubuntu) system.
+Before install the lammps,you should install the <strong>MPICH</strong> and <strong>FFTW</strong> in your PC machine.</p>
+<div class="section" id="prerequisites">
+<h4>5.2.1.1. Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>MPICH</strong> should be installed firstly</p></li>
+</ul>
+<p>Before you install the mpich,you should execute the following command in order to meet some of the dependencies:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">gfortran</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">gcc</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">g</span><span class="o">++</span>
+</pre></div>
+</div>
+<p>Then you can go to it’s <a class="reference external" href="http://www.mpich.org/">source website</a> and download the package,like <strong>mpich-3.3.1.tar.gz</strong>,when
+you unzip the package,read the <strong>README</strong> file,you can can implement the following commands:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">zxvf</span> <span class="n">mpich</span><span class="o">-</span><span class="mf">3.3.1</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">cd</span> <span class="n">mpich</span><span class="o">-</span><span class="mf">3.2</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">day</span><span class="o">/</span><span class="n">computer</span><span class="o">/</span><span class="n">mpich3</span><span class="o">/</span><span class="p">(</span> <span class="o">=</span> <span class="n">you</span> <span class="n">should</span> <span class="n">remmember</span> <span class="n">this</span> <span class="n">path</span><span class="p">)</span>
+<span class="n">make</span> <span class="o">&amp;</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>Okay you have install the mpich in your system,next you should configure enviroment</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+<span class="n">vim</span> <span class="p">.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>In the <strong>.bashrc</strong> file,add the following statements</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>export PATH=/home/day/computer/mpich3/bin:$PATH
+export MANPATH=//home/day/computer/mpich3/man:$MANPATH
+</pre></div>
+</div>
+<p>Exit the <strong>.bashrc</strong> file and execute the following command.Of course you can test your installation after execute the command with
+the help of <strong>mpirun -np k ./examples/cpi</strong> statement.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="p">.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>FFTW</strong></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dl-poly-tutorials">
+<h2>5.3. DL_POLY Tutorials<a class="headerlink" href="#dl-poly-tutorials" title="Permalink to this headline">¶</a></h2>
+<p>DL_POLY is a package of subroutines,programs and data files,designed to facilitate molecular dynamics simulations of macromolecules,
+polymers,ionic systems and solutions on a distributed memory parallel computer.</p>
+<div class="section" id="install-dl-poly">
+<h3>5.3.1. Install DL_POLY<a class="headerlink" href="#install-dl-poly" title="Permalink to this headline">¶</a></h3>
+<p>In this section,I will show you the simplest way to install the DL_POLY in you Linux(Ubuntu) system.What you should install
+<strong>gfortran</strong> and <strong>MPICH</strong> in your computer before install the DL_POLY which are introduced in the Lammps Install section.
+Consequently you only need to download the source code from <a class="reference external" href="https://www.scd.stfc.ac.uk/Pages/DL_POLY.aspx">the official website</a>
+and execute the following commands</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">unzip</span> <span class="n">dl_poly_4</span><span class="mf">.09</span><span class="p">.</span><span class="n">zip</span>
+<span class="n">cd</span> <span class="n">dl_poly_4</span><span class="mf">.09</span>
+<span class="n">cd</span> <span class="n">source</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="p">..</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">Makefile</span><span class="o">-</span><span class="n">MPI</span> <span class="n">Makefile</span>
+<span class="n">vim</span> <span class="n">Makefile</span> <span class="p">(</span><span class="o">**</span><span class="n">modify</span> <span class="n">the</span> <span class="n">Makefile</span><span class="o">**</span><span class="p">)</span>
+<span class="n">make</span> <span class="n">hpc</span>
+</pre></div>
+</div>
+<p>If you want a <strong>JAVA-GUI</strong> to visualize your simulation system and examine basic properties,you should execute</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">..</span><span class="o">/</span><span class="n">java</span>
+<span class="p">.</span><span class="o">/</span><span class="n">build</span>
+</pre></div>
+</div>
+<p>Okay you have install the DL_POLY in your PC and you can see a executable file <strong>DLPOLY.Z</strong> in the execute folder.Hope
+you have installed successfully!</p>
+</div>
 </div>
 </div>
 
@@ -185,10 +269,10 @@ molecular dynamics calculation is unable to sample an adequate number of microst
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="help.html" class="btn btn-neutral float-right" title="Help Turitorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="help.html" class="btn btn-neutral float-right" title="6. Help Turitorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="NeutronDamage.html" class="btn btn-neutral float-left" title="Neutron Damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="NeutronDamage.html" class="btn btn-neutral float-left" title="4. Neutron Damage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

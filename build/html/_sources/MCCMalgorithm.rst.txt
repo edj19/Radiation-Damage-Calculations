@@ -140,6 +140,20 @@ Data Cards
 
 Some Examples
 ^^^^^^^^^^^^^^
+Fmn examples:
+
+F4:N 10
+FM4   0.04789   999 102
+M999  92238.13 1
+
+The F4 neutron tally is the track length estimate of the average fluence in cell 10.Material 999 is 238U with an atomic fraction
+of 100%
+where 
+C=0.04787 normalization factor(such as **atom/barn.cm**),which you can regard it as atom density and calculate with the following
+formula:
+
+.. math::
+    N=\frac{n}{V}=\frac{\rho N_{A}}{M}
 
 Conclusions
 ------------

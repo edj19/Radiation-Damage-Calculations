@@ -2,16 +2,8 @@ Welcome to RadiationDamageCalculations's documentation!
 =======================================================
 
 
-Another simple header
-======================
-
-Here is some text explainingsome very complicated stuff..
-
-    print 'hello'
-    >> hello
-
-
 .. toctree::
+   :numbered:
    :maxdepth: 3
 
    intro.rst

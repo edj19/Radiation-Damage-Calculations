@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Neutron Damage &mdash; RadiationDamageCalculations 0.1 documentation</title>
+  <title>4. Neutron Damage &mdash; RadiationDamageCalculations 0.1 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Molecular Dynamics" href="MolecularDynamics.html" />
-    <link rel="prev" title="MCCM algorithm" href="MCCMalgorithm.html" /> 
+    <link rel="next" title="5. Molecular Dynamics" href="MolecularDynamics.html" />
+    <link rel="prev" title="3. MCCM algorithm" href="MCCMalgorithm.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,28 +82,28 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">Basic Radiation Damage model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MCCMalgorithm.html">MCCM algorithm</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Neutron Damage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-models-and-methods">Basic Models and Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#spectra-and-specomp-distribution">SPECTRA and SPECOMP_Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#talys1-9">Talys1.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#njoy-nuclear-data-processing">NJOY Nuclear Data Processing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#moder">MODER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reconr">RECONR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#broadr">BROADR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#heatr">HEATR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#groupr">GROUPR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#acer">ACER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plotr-and-viewr">PLOTR and VIEWR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusions">Conclusions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">2. Basic Radiation Damage model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCCMalgorithm.html">3. MCCM algorithm</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Neutron Damage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-models-and-methods">4.1. Basic Models and Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spectra-and-specomp-distribution">4.2. SPECTRA and SPECOMP_Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#talys1-9">4.3. Talys1.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#njoy-nuclear-data-processing">4.4. NJOY Nuclear Data Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moder">4.4.1. MODER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reconr">4.4.2. RECONR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#broadr">4.4.3. BROADR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heatr">4.4.4. HEATR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#groupr">4.4.5. GROUPR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acer">4.4.6. ACER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plotr-and-viewr">4.4.7. PLOTR and VIEWR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusions">4.4.8. Conclusions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="MolecularDynamics.html">Molecular Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help.html">Help Turitorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MolecularDynamics.html">5. Molecular Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">6. Help Turitorials</a></li>
 </ul>
 
             
@@ -149,7 +149,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Neutron Damage</li>
+      <li>4. Neutron Damage</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,7 +169,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="neutron-damage">
-<h1>Neutron Damage<a class="headerlink" href="#neutron-damage" title="Permalink to this headline">¶</a></h1>
+<h1>4. Neutron Damage<a class="headerlink" href="#neutron-damage" title="Permalink to this headline">¶</a></h1>
 <p>My another research work is the neutron radiation damage in materials and mainly focus on the displacement cross section and displacement per atom(dpa)
 calculations.Quantification of displacement damage is an essential parameter to assess the strength and lifetime of
 functional materials in the ITER and upcoming fusion devices such as European Demo fusion reactor.Fusion neutrons produce
@@ -190,10 +190,10 @@ physical quantity neutron fluxes and displacement cross section where their form
 incident neutron, <span class="math notranslate nohighlight">\(E_d\)</span> is the displacement threshold energy of target lattice, <span class="math notranslate nohighlight">\(T_{max}\)</span> is the maximum energy available
 for displacement damage and <span class="math notranslate nohighlight">\(\Phi_n\)</span> is the neutron flux on the material.</p>
 <div class="section" id="basic-models-and-methods">
-<h2>Basic Models and Methods<a class="headerlink" href="#basic-models-and-methods" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. Basic Models and Methods<a class="headerlink" href="#basic-models-and-methods" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="spectra-and-specomp-distribution">
-<h2>SPECTRA and SPECOMP_Distribution<a class="headerlink" href="#spectra-and-specomp-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>4.2. SPECTRA and SPECOMP_Distribution<a class="headerlink" href="#spectra-and-specomp-distribution" title="Permalink to this headline">¶</a></h2>
 <p><strong>SPECTER</strong> is a neutron damage calculations for materials irradiations programm.</p>
 <p>SPECTER input is as follows(all free format):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Title （80 characters)
@@ -207,10 +207,10 @@ ITYP,ISIG,IGP,IPKA,ACNM,TIME(Free Format)
 </div>
 </div>
 <div class="section" id="talys1-9">
-<h2>Talys1.9<a class="headerlink" href="#talys1-9" title="Permalink to this headline">¶</a></h2>
+<h2>4.3. Talys1.9<a class="headerlink" href="#talys1-9" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="njoy-nuclear-data-processing">
-<h2>NJOY Nuclear Data Processing<a class="headerlink" href="#njoy-nuclear-data-processing" title="Permalink to this headline">¶</a></h2>
+<h2>4.4. NJOY Nuclear Data Processing<a class="headerlink" href="#njoy-nuclear-data-processing" title="Permalink to this headline">¶</a></h2>
 <p>The NJOY nuclear data processing system is a comprehensive computer code package for producing pointwise and multigroup nuclear
 cross sections and related quantities from evaluated nuclear data in the <strong>ENDF</strong> format.The U.S. Evaluated Nuclear Data Files(ENDF)
 have progressed through a number of versions,notably ENDF/B-III,ENDF/B-IV,ENDF/B-V,ENDF/B-VI,ENDF/B-VII.The ENDF format has also evolved
@@ -227,7 +227,7 @@ here is to let you are familar with NJOY as soon as possible,in contrast to this
 I believe that what this tutorial will make you love it and do your research better.</p>
 <img alt="_images/njoy1.jpg" src="_images/njoy1.jpg" />
 <div class="section" id="moder">
-<h3>MODER<a class="headerlink" href="#moder" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.1. MODER<a class="headerlink" href="#moder" title="Permalink to this headline">¶</a></h3>
 <p><strong>MODER</strong> converts ENDF “tapes” back and forth between formatted(that is,ASCII) and blocked binary modes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications(free) format)--------------------</span>
 <span class="o">**</span><span class="n">card</span> <span class="mi">1</span><span class="o">**</span>       <span class="n">unit</span> <span class="n">numbers</span>
@@ -257,7 +257,7 @@ I believe that what this tutorial will make you love it and do your research bet
 </div>
 </div>
 <div class="section" id="reconr">
-<h3>RECONR<a class="headerlink" href="#reconr" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.2. RECONR<a class="headerlink" href="#reconr" title="Permalink to this headline">¶</a></h3>
 <p><strong>RECONR</strong> reconstructs pointwise(energy-dependent) cross sections from ENDF resonance parameters and interpolation schemes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications (free format)-------------</span>
 <span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
@@ -294,7 +294,7 @@ I believe that what this tutorial will make you love it and do your research bet
 </div>
 </div>
 <div class="section" id="broadr">
-<h3>BROADR<a class="headerlink" href="#broadr" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.3. BROADR<a class="headerlink" href="#broadr" title="Permalink to this headline">¶</a></h3>
 <p><strong>BROADR</strong> Doppler-broadens and thins pointwise cross sections.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specification(free format)--------</span>
 <span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
@@ -329,7 +329,7 @@ I believe that what this tutorial will make you love it and do your research bet
 </div>
 </div>
 <div class="section" id="heatr">
-<h3>HEATR<a class="headerlink" href="#heatr" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.4. HEATR<a class="headerlink" href="#heatr" title="Permalink to this headline">¶</a></h3>
 <p><strong>HEATER</strong> generative pointwise heat production cross section (neutron KERMA factors) and radiation damage production cross sections.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications(free format)------------------</span>
 <span class="o">**</span><span class="n">card</span><span class="o">**</span> <span class="mi">1</span>
@@ -378,7 +378,7 @@ I believe that what this tutorial will make you love it and do your research bet
 </div>
 </div>
 <div class="section" id="groupr">
-<h3>GROUPR<a class="headerlink" href="#groupr" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.5. GROUPR<a class="headerlink" href="#groupr" title="Permalink to this headline">¶</a></h3>
 <p><strong>GROUPR</strong> generates self-shielded multigroup cross sections,group-to-group scattering matrices,photon production matrices,and
 charged-particle multi-group cross sections from pointwise input.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---input specifications(free format)-----------</span>
@@ -390,17 +390,17 @@ charged-particle multi-group cross sections from pointwise input.</p>
 </div>
 </div>
 <div class="section" id="acer">
-<h3>ACER<a class="headerlink" href="#acer" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.6. ACER<a class="headerlink" href="#acer" title="Permalink to this headline">¶</a></h3>
 <p><strong>ACER</strong> prepares libraries in ACE format for the Los Alamos continuous-energy Monte Carlo MCNP and MCNPX codes.The ACER module is supported
 by subsidiary modules for the different classes of the ACE format.</p>
 </div>
 <div class="section" id="plotr-and-viewr">
-<h3>PLOTR and VIEWR<a class="headerlink" href="#plotr-and-viewr" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.7. PLOTR and VIEWR<a class="headerlink" href="#plotr-and-viewr" title="Permalink to this headline">¶</a></h3>
 <p><strong>PLOTR</strong> makes plots of cross sections and perspective plots of distributions for both pointwise and multigroup data by generating
 input for the VIEWR module and <strong>VIEWR</strong> converts plotting files produced by the other modules into high-quality color Postscript plots.</p>
 </div>
 <div class="section" id="conclusions">
-<h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.8. Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -413,10 +413,10 @@ input for the VIEWR module and <strong>VIEWR</strong> converts plotting files pr
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="MolecularDynamics.html" class="btn btn-neutral float-right" title="Molecular Dynamics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="MolecularDynamics.html" class="btn btn-neutral float-right" title="5. Molecular Dynamics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="MCCMalgorithm.html" class="btn btn-neutral float-left" title="MCCM algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="MCCMalgorithm.html" class="btn btn-neutral float-left" title="3. MCCM algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

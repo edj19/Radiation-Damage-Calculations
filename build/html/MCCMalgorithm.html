@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MCCM algorithm &mdash; RadiationDamageCalculations 0.1 documentation</title>
+  <title>3. MCCM algorithm &mdash; RadiationDamageCalculations 0.1 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Neutron Damage" href="NeutronDamage.html" />
-    <link rel="prev" title="Basic Radiation Damage model" href="BasicRadiationDamage.html" /> 
+    <link rel="next" title="4. Neutron Damage" href="NeutronDamage.html" />
+    <link rel="prev" title="2. Basic Radiation Damage model" href="BasicRadiationDamage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,24 +82,24 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">Basic Radiation Damage model</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">MCCM algorithm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-models-and-methods">Basic Models and Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">MCCM algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mcnp">MCNP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#surface-cards">Surface Cards</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cell-cards">Cell Cards</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-cards">Data Cards</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#some-examples">Some Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicRadiationDamage.html">2. Basic Radiation Damage model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. MCCM algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-models-and-methods">3.1. Basic Models and Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">3.2. MCCM algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mcnp">3.3. MCNP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#surface-cards">3.3.1. Surface Cards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-cards">3.3.2. Cell Cards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-cards">3.3.3. Data Cards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-examples">3.3.4. Some Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#conclusions">Conclusions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusions">3.4. Conclusions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="NeutronDamage.html">Neutron Damage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MolecularDynamics.html">Molecular Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help.html">Help Turitorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NeutronDamage.html">4. Neutron Damage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MolecularDynamics.html">5. Molecular Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">6. Help Turitorials</a></li>
 </ul>
 
             
@@ -145,7 +145,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>MCCM algorithm</li>
+      <li>3. MCCM algorithm</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,7 +165,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mccm-algorithm">
-<h1>MCCM algorithm<a class="headerlink" href="#mccm-algorithm" title="Permalink to this headline">¶</a></h1>
+<h1>3. MCCM algorithm<a class="headerlink" href="#mccm-algorithm" title="Permalink to this headline">¶</a></h1>
 <p>The possible damage induced by radiation in solid materials has been a topic of great interest for the
 scientific community.The effects that may be induced by this way depend on the nature of the study material.
 To obtain a good effectiveness inside the material volume,inclusive at high depth,it is well-known that
@@ -178,11 +178,11 @@ on material properties.But the good news is that gamma-ray irradiation can separ
 material atom displacement threshold energy(<span class="math notranslate nohighlight">\(E_d\)</span>) when our group reasearch the gamma-ray influence different
 dioxides.</p>
 <div class="section" id="basic-models-and-methods">
-<h2>Basic Models and Methods<a class="headerlink" href="#basic-models-and-methods" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. Basic Models and Methods<a class="headerlink" href="#basic-models-and-methods" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/model1.jpg" src="_images/model1.jpg" />
 </div>
 <div class="section" id="id1">
-<h2>MCCM algorithm<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. MCCM algorithm<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The number of atom displacements in the voxel volume <span class="math notranslate nohighlight">\(N_{dpa}\)</span> from the MCCM algorithm is an extended sum over
 the calculated discrete electron flux values at a given depth <span class="math notranslate nohighlight">\(z\)</span> ,generalized for any k-atom in the materials:</p>
 <div class="math notranslate nohighlight">
@@ -269,14 +269,14 @@ used obtained by the expression</p>
 \[T_{av} = \frac{1}{\sigma_{PKA}}\frac{\pi Z^2_a r^2_0}{\beta^4 \gamma^2}T_m [\ln(\frac{T_m}{T_d})-\beta^2(1-\frac{T_d}{T_m})+\pi\alpha\beta (\sqrt{\frac{T_d}{T_M}}-1)^2]\]</div>
 </div>
 <div class="section" id="mcnp">
-<h2>MCNP<a class="headerlink" href="#mcnp" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. MCNP<a class="headerlink" href="#mcnp" title="Permalink to this headline">¶</a></h2>
 <p>MCNP is a general purpose Monte Carlo N-Particle code that can be used for neutron,photon,electron,or coupled neutron/photon/electron
 transport,including the capbility to calculate eigenvalues for critical systems.For beginners,its tutorials are unfriendly
 and obscure, and for this purpose,I rewrite a simple and intelligible tutorial for beginners which can reduce time and vigour for the
 research works.Okay,let’s begin our tour.</p>
 <img alt="_images/mcnp.jpg" src="_images/mcnp.jpg" />
 <div class="section" id="surface-cards">
-<h3>Surface Cards<a class="headerlink" href="#surface-cards" title="Permalink to this headline">¶</a></h3>
+<h3>3.3.1. Surface Cards<a class="headerlink" href="#surface-cards" title="Permalink to this headline">¶</a></h3>
 <p>Surface can be defined by <strong>equations</strong>, <strong>points</strong> ,or <strong>macrobodies</strong>.In this simple tutorial,I only introduce the <strong>equations</strong>
 section which is most popurlar use in the simulation works.If your work involes other section,you can sql official documentation.
 Okay,You can define your surfaces with the following form and relative explainations are in the table below.</p>
@@ -290,7 +290,7 @@ Okay,You can define your surfaces with the following form and relative explainat
 <img alt="_images/sheet.jpg" src="_images/sheet.jpg" />
 </div>
 <div class="section" id="cell-cards">
-<h3>Cell Cards<a class="headerlink" href="#cell-cards" title="Permalink to this headline">¶</a></h3>
+<h3>3.3.2. Cell Cards<a class="headerlink" href="#cell-cards" title="Permalink to this headline">¶</a></h3>
 <p>If you have read the surface cards section,it is cheerful to use these surfaces to define the cell or geometry for your model.
 The geometry of MCNP treats an arbitrary three-dimensional configuration of user-fined materials in geometric cells
 bounded by first- and second-degree surfaces. The calls are defined by the <strong>intersections</strong>, <strong>unions</strong>, and <strong>complements</strong>
@@ -300,14 +300,25 @@ any set of points <span class="math notranslate nohighlight">\((x,y,z)\)</span>,
 said to have a negative sense with respect to that surface and,conversely,a positive sense if <span class="math notranslate nohighlight">\(S\)</span> is positive.</p>
 </div>
 <div class="section" id="data-cards">
-<h3>Data Cards<a class="headerlink" href="#data-cards" title="Permalink to this headline">¶</a></h3>
+<h3>3.3.3. Data Cards<a class="headerlink" href="#data-cards" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="some-examples">
-<h3>Some Examples<a class="headerlink" href="#some-examples" title="Permalink to this headline">¶</a></h3>
+<h3>3.3.4. Some Examples<a class="headerlink" href="#some-examples" title="Permalink to this headline">¶</a></h3>
+<p>Fmn examples:</p>
+<p>F4:N 10
+FM4   0.04789   999 102
+M999  92238.13 1</p>
+<p>The F4 neutron tally is the track length estimate of the average fluence in cell 10.Material 999 is 238U with an atomic fraction
+of 100%
+where
+C=0.04787 normalization factor(such as <strong>atom/barn.cm</strong>),which you can regard it as atom density and calculate with the following
+formula:</p>
+<div class="math notranslate nohighlight">
+\[N=\frac{n}{V}=\frac{\rho N_{A}}{M}\]</div>
 </div>
 </div>
 <div class="section" id="conclusions">
-<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -319,10 +330,10 @@ said to have a negative sense with respect to that surface and,conversely,a posi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="NeutronDamage.html" class="btn btn-neutral float-right" title="Neutron Damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="NeutronDamage.html" class="btn btn-neutral float-right" title="4. Neutron Damage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="BasicRadiationDamage.html" class="btn btn-neutral float-left" title="Basic Radiation Damage model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="BasicRadiationDamage.html" class="btn btn-neutral float-left" title="2. Basic Radiation Damage model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
